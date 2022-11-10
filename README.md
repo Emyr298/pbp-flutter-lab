@@ -47,6 +47,7 @@ void _decrementCounter() {
 Setelah kedua fungsi jadi, saya menambahkan kedua fungsi pada `onPressed` dari tombol yang bersesuaian sehingga fungsi akan dijalankan ketika tombol diklik.
 
 #### Teks `GENAP` dan `GANJIL`
+Pada _widget_ `Text` yang tadinya berisi string default _template_, saya mengubah stringnya menjadi `(_counter % 2 == 0) ? 'GENAP' : 'GANJIL'` agar ketika _counter_ bernilai genap, teksnya menjadi `"GENAP"` dan ketika ganjil, teksnya menjadi `"GANJIL"`. Setelah itu, saya menambahkan argumen pada `style`-nya dengan `TextStyle` yang berisikan `(_counter % 2 == 0) ? Colors.red : Colors.blue` sebagai `color` sehingga ketika _counter_ bernilai genap, warna dari teks adalah merah dan ketika ganjil, warna dari teks adalah biru.
 
 ## Referensi
 - https://www.geeksforgeeks.org/flutter-stateful-vs-stateless-widgets/
