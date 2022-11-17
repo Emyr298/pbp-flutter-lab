@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:counter_7/drawer.dart';
+import 'package:counter_7/budget.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final List<Budget> budgetList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -14,15 +23,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Program Counter'),
+      home: MyHomePage(budgetList: budgetList),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key, required this.budgetList});
 
-  final String title;
+  final String title = 'Program Counter';
+  final List<Budget> budgetList;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -49,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
+      drawer: MyDrawer(budgetList: widget.budgetList),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -74,12 +85,14 @@ class _MyHomePageState extends State<MyHomePage> {
             Visibility(
               visible: (_counter != 0),
               child: FloatingActionButton(
+                heroTag: 'buttonDecrement',
                 onPressed: _decrementCounter,
                 tooltip: 'Decrement',
                 child: const Icon(Icons.remove),
               ),
             ),
             FloatingActionButton(
+              heroTag: 'buttonIncrement',
               onPressed: _incrementCounter,
               tooltip: 'Increment',
               child: const Icon(Icons.add),
