@@ -121,3 +121,7 @@ Saya membuat _widget_ `DataBudget` dengan jenis `StatelessWidget` yang menerima 
 ### Referensi
 - https://stackoverflow.com/questions/51125024/there-are-multiple-heroes-that-share-the-same-tag-within-a-subtree
 - https://stackoverflow.com/questions/59474307/error-either-zero-or-2-or-more-dropdownmenuitems-were-detected-with-the-same
+
+## Tugas 9
+### Referensi
+- https://stackoverflow.com/questions/71091828/crossaxisalignment-crossaxisalignment-end-doesnt-work

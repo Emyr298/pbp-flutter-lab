@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:counter_7/drawer.dart';
-import 'package:flutter/services.dart';
-import 'package:counter_7/budget.dart';
+import 'package:counter_7/models/budget.dart';
 
 class DataBudget extends StatelessWidget {
   const DataBudget({super.key, required this.budgetList});

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:counter_7/main.dart';
-import 'package:counter_7/tambah_budget.dart';
-import 'package:counter_7/budget.dart';
-import 'package:counter_7/data_budget.dart';
+import 'package:counter_7/pages/tambah_budget.dart';
+import 'package:counter_7/models/budget.dart';
+import 'package:counter_7/pages/data_budget.dart';
+import 'package:counter_7/pages/my_watch_list.dart';
 
 class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key, required this.budgetList});
@@ -49,6 +50,17 @@ class _MyDrawerState extends State<MyDrawer> {
                 MaterialPageRoute(
                     builder: (context) =>
                         DataBudget(budgetList: widget.budgetList)),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('My Watch List'),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        MyWatchListPage(budgetList: widget.budgetList)),
               );
             },
           ),
